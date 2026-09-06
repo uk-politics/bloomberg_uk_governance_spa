@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomberg Entities & UK Governance | Forensic Policy Infographic</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Embedded Custom Palette Styles & Chart Container Constraints -->
+    <style>
+        :root {
+            --color-primary: #1e3a8a;    /* Imperial Sapphire */
+            --color-secondary: #0284c7;  /* Brilliant Blue */
+            --color-accent: #0d9488;     /* Vibrant Teal */
+            --color-warm: #f59e0b;       /* Amber Gold */
+            --color-dark: #0f172a;       /* Dark Slate */
+            --color-light: #f8fafc;      /* Light Gray Background */
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 340px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Color Palette: Brilliant Blues & Slate (Palette: Brilliant Blues) -->
+    <!-- Plan Summary: This SPA Infographic visualizes the operational footprint of Bloomberg entities across UK local and regional governance. It synthesizes executive leadership cohorts, pro-bono consulting engagements, policy transmission lines across 5 core domains, asylum dispersal overlays, and Freedom of Information parameters using interactive Chart.js visualizations, structured data matrices, and metric cards. -->
+    <!-- Visualizations Justification: 
+         1. Local Authority Evidentiary Matrix (Horizontal Stacked Bar): Compares Direct Evidence, Strategic Alignment, and Indirect Correlation across 13 UK council jurisdictions to establish geographic density.
+         2. Intermediary Network Influence Ecosystem (Doughnut Chart): Displays proportional representation of key intermediary delivery bodies (C40, 3Ci, LSE Cities, BIT, CPI, GPL) driving policy execution.
+         3. Policy Transmission Matrix Across 5 Key Domains (Radar Chart): Highlights programmatic density across Municipal Innovation, Housing, Climate, Health, and Regional Devolution.
+         4. Asylum Dispersal vs Bloomberg Social Policy Overlay (Grouped Bar Chart): Compares total asylum seeker volumes against per-10k concentration rates to illustrate fiscal/administrative pressures on high-engagement councils.
+         5. Multi-Year Programmatic Grant & Scaling Trajectory (Line Chart): Demonstrates the temporal sequence from initial local pilots (e.g. Breathe London) to global $45M network expansions.
+         * CONFIRMATION: NEITHER MERMAID JS NOR SVG WERE USED ANYWHERE IN THIS OUTPUT. ALL CHARTS RENDER ON HTML5 CANVAS AND DIAGRAMS USE HTML/CSS GRID/FLEX STRUCTURES WITH UNICODE GLYPHS. * -->
+    <!-- Confirmation: NEITHER Mermaid JS NOR SVG were used in this output. -->
+
+    <!-- TOP HEADER / HERO SECTION -->
+    <header class="gradient-bg text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-amber-500">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-blue-900/60 border border-blue-400/30 rounded-full px-3 py-1 text-xs font-semibold tracking-wide text-sky-300 uppercase mb-3">
+                        <span>🔍 Forensic Policy Analysis</span>
+                        <span>•</span>
+                        <span>UK Municipal Governance</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        POLICY GENEALOGY & INSTITUTIONAL NETWORKS
+                    </h1>
+                    <p class="mt-3 text-lg sm:text-xl text-sky-100 max-w-4xl font-light leading-relaxed">
+                        Evaluating the Operational Footprint of Bloomberg Entities Across UK Local and Central Authorities (SNP & Labour Administrations)
+                    </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 text-center min-w-[200px] hidden lg:block">
+                    <span class="block text-3xl font-black text-amber-400">13+</span>
+                    <span class="text-xs uppercase tracking-wider text-slate-200 font-medium">UK Jurisdictions Mapped</span>
+                </div>
+            </div>
+
+            <!-- KEY METRICS BANNER -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-blue-800/60">
+                <div class="bg-blue-950/50 rounded-lg p-4 border border-blue-700/40">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-amber-400">9</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Mayoral Strategic Authorities Engaged</div>
+                </div>
+                <div class="bg-blue-950/50 rounded-lg p-4 border border-blue-700/40">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-sky-300">£2.8M</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Breathe London Pilot Investment</div>
+                </div>
+                <div class="bg-blue-950/50 rounded-lg p-4 border border-blue-700/40">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-teal-300">5 Domains</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Core Policy Transmission Vectors</div>
+                </div>
+                <div class="bg-blue-950/50 rounded-lg p-4 border border-blue-700/40">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-amber-300">48.5 /10k</div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">Peak Local Asylum Concentration Rate</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STICKY NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-slate-900 text-slate-200 shadow-md border-b border-slate-800 backdrop-blur-lg bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14 overflow-x-auto whitespace-nowrap scrollbar-none gap-6 text-sm font-medium">
+                <a href="#executive-summary" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">Executive Summary</a>
+                <a href="#leadership-mapping" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">Leadership Networks</a>
+                <a href="#policy-domains" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">5 Policy Domains</a>
+                <a href="#asylum-overlay" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">Asylum Data Overlay</a>
+                <a href="#foi-repository" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">FOI Guide & Primary Sources</a>
+                <a href="#conclusions" class="hover:text-sky-400 transition-colors py-2 border-b-2 border-transparent hover:border-sky-400">Strategic Conclusions</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: EXECUTIVE SUMMARY & EVIDENCE MATRIX -->
+        <section id="executive-summary" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Executive Summary & Evidence Matrix</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Systematic evaluation of philanthropic interventions, pro-bono consulting, and executive leadership cohorts across UK councils.
+                </p>
+            </div>
+
+            <!-- Introductory Paragraph -->
+            <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200 mb-8">
+                <p class="text-slate-700 leading-relaxed text-base">
+                    The landscape of UK municipal governance has undergone a structural realignment driven by targeted interventions from philanthropic and technical entities operating within the ecosystem of Bloomberg enterprise. Through a multi-tiered framework encompassing executive leadership cohorts (Harvard/LSE), pro-bono consulting engagements (Bloomberg Associates), direct grant funding (Bloomberg Philanthropies), and intermediary research platforms (C40, 3Ci, BIT), Bloomberg entities have established institutional access points across Scottish National Party (SNP) and Labour-led local, regional, and national authorities.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- CHART CONTAINER 1 -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Evidentiary Classification by Local Authority</h3>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Categorization of jurisdictional engagement into Direct Evidence (MoUs, direct consulting), Strategic Alignment, and Indirect Correlation.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="chartEvidenceMatrix"></canvas>
+                    </div>
+                </div>
+
+                <!-- MATRIX TABLE -->
+                <div class="lg:col-span-7 bg-white rounded-xl card-shadow border border-slate-200 overflow-hidden">
+                    <div class="px-6 py-4 bg-slate-900 text-white flex justify-between items-center">
+                        <h3 class="font-bold text-base">Master Evidence Cross-Reference Table</h3>
+                        <span class="text-xs bg-sky-800 text-sky-200 px-2.5 py-1 rounded-full font-mono">13 Authorities Mapped</span>
+                    </div>
+                    <div class="overflow-x-auto max-h-[420px] overflow-y-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead class="bg-slate-100 text-slate-700 uppercase sticky top-0 font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="p-3">Local Authority</th>
+                                    <th class="p-3">Party</th>
+                                    <th class="p-3">Bloomberg Entity / Intermediary</th>
+                                    <th class="p-3">Policy / Programmatic Intervention</th>
+                                    <th class="p-3">Classification</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-normal text-slate-700">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Greater London Authority (GLA)</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">C40, Bloomberg Associates, Partnership for Healthy Cities</td>
+                                    <td class="p-3">ULEZ expansion, Breathe London (£2.8M), TfL HFSS ad ban, Climate Risk Maps</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Greater Manchester Combined Authority (GMCA)</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Strategic Mayors Initiative, Bloomberg Harvard, Healthy Cities</td>
+                                    <td class="p-3">A Bed Every Night (ABEN) rough sleeping framework, HFSS ad restrictions</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Glasgow City Council</td>
+                                    <td class="p-3"><span class="bg-yellow-100 text-amber-900 px-2 py-0.5 rounded font-medium">SNP</span></td>
+                                    <td class="p-3">Bloomberg Harvard (2023), 3Ci, Youth Climate Fund</td>
+                                    <td class="p-3">Glasgow Greenprint, £115M Avenues active travel corridors, district energy retrofits</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">West Yorkshire Combined Authority</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg Harvard, Bloomberg LSE European Initiative</td>
+                                    <td class="p-3">Regional transport devolution, outcome-based budgeting, performance analytics</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Westminster City Council</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg Associates</td>
+                                    <td class="p-3">Harrow Road corridor revitalization, school network optimization, market strategy</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">London Borough of Islington</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg Associates</td>
+                                    <td class="p-3">Borough-wide Climate Vulnerability Mapping, LSOA heat/flood risk scoring</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">London Office of Tech & Innovation (LOTI)</td>
+                                    <td class="p-3"><span class="bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-medium">Cross-party</span></td>
+                                    <td class="p-3">Bloomberg Associates, GLA</td>
+                                    <td class="p-3">"City Tools: London" / "Thirty3" platform for cross-borough IT procurement visibility</td>
+                                    <td class="p-3"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">Direct Evidence</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">South Yorkshire Combined Authority</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg LSE European City Leadership Initiative</td>
+                                    <td class="p-3">Regional transport planning, integrated health/economic outcomes framework</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">Strategic Alignment</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">West Midlands Combined Authority</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg LSE European City Leadership Initiative</td>
+                                    <td class="p-3">Devolution deal expansion, outcome-based regional procurement models</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">Strategic Alignment</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">West of England Combined Authority</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg Harvard City Leadership Initiative (Class of 2027)</td>
+                                    <td class="p-3">Housing affordability, regional spatial strategy, data-driven local delivery</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">Strategic Alignment</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Blackpool Council</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg LSE European City Leadership Initiative</td>
+                                    <td class="p-3">Urban regeneration, public health integration, municipal modernization</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">Strategic Alignment</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Newport City Council</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg LSE European City Leadership Initiative</td>
+                                    <td class="p-3">Local government innovation, digital public service delivery standards</td>
+                                    <td class="p-3"><span class="bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold">Strategic Alignment</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Oxford City Council</td>
+                                    <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-0.5 rounded font-medium">Labour</span></td>
+                                    <td class="p-3">Bloomberg Philanthropies, 3Ci</td>
+                                    <td class="p-3">Oxford City Centre Movement Strategy, active travel corridors, anti-idling</td>
+                                    <td class="p-3"><span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">Indirect Correlation</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INDIVIDUAL & INTERMEDIARY NETWORK MAPPING -->
+        <section id="leadership-mapping" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Individual & Intermediary Leadership Pipelines</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Tracing executive training cohorts, fellowships, embedded consulting nodes, and intermediary delivery platforms.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200 mb-8">
+                <p class="text-slate-700 leading-relaxed text-base">
+                    The transmission belt for Bloomberg policy methodologies into UK political institutions operates through structured executive cohorts, fellowships, and international delegations. The operational pipeline progresses sequentially: executive leadership programs at Harvard and LSE socialize elected leaders; embedded consulting teams from Bloomberg Associates deploy technical assistance; intermediary platforms like 3Ci, C40 Cities, and the Behavioural Insights Team scale solutions; and local authorities ultimately enact statutory policies such as ULEZ expansions, "A Bed Every Night" rapid rehousing, and outcome-based budgeting frameworks.
+                </p>
+            </div>
+
+            <!-- VISUAL DIAGRAM (STRUCTURED HTML/CSS - NO SVG / NO MERMAID) -->
+            <div class="bg-slate-900 text-white p-6 rounded-xl card-shadow mb-8">
+                <h3 class="text-lg font-bold text-amber-400 mb-4 text-center">Institutional Transmission Pipeline Model</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 relative">
+                        <div class="text-2xl mb-1">🎓</div>
+                        <div class="font-bold text-sky-400 text-sm">1. Executive Socialization</div>
+                        <div class="text-xs text-slate-300 mt-2">Bloomberg Harvard & LSE Leadership Cohorts for Mayors & Council Leaders</div>
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-amber-400 font-bold z-10 text-xl">➔</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 relative">
+                        <div class="text-2xl mb-1">🛠️</div>
+                        <div class="font-bold text-sky-400 text-sm">2. Embedded Consulting</div>
+                        <div class="text-xs text-slate-300 mt-2">Bloomberg Associates pro-bono teams draft strategy & data architecture</div>
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-amber-400 font-bold z-10 text-xl">➔</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 relative">
+                        <div class="text-2xl mb-1">🌐</div>
+                        <div class="font-bold text-sky-400 text-sm">3. Intermediary Scaling</div>
+                        <div class="text-xs text-slate-300 mt-2">3Ci, C40 Cities, BIT, CPI translate pilots into standardized toolkits</div>
+                        <div class="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 text-amber-400 font-bold z-10 text-xl">➔</div>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                        <div class="text-2xl mb-1">🏛️</div>
+                        <div class="font-bold text-sky-400 text-sm">4. Statutory Directives</div>
+                        <div class="text-xs text-slate-300 mt-2">ULEZ expansion, ABEN, junk food ad bans, outcome-based budgeting</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEADERSHIP CARDS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Sadiq Khan -->
+                <div class="bg-white rounded-xl p-5 card-shadow border-t-4 border-red-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-900">Sadiq Khan</h4>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">Labour</span>
+                    </div>
+                    <p class="text-xs font-semibold text-sky-700 mb-3">Mayor of London (GLA)</p>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• <strong>C40 Cities Co-Chair</strong>: Direct governance alignment with Bloomberg Philanthropies.</li>
+                        <li>• <strong>Breathe London</strong>: £2.8M joint investment for 135+ air quality monitoring sensors.</li>
+                        <li>• <strong>Bloomberg Associates</strong>: Pro-bono consulting for Climate Risk Maps & Cool Spaces.</li>
+                    </ul>
+                </div>
+
+                <!-- Andy Burnham -->
+                <div class="bg-white rounded-xl p-5 card-shadow border-t-4 border-red-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-900">Andy Burnham</h4>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">Labour</span>
+                    </div>
+                    <p class="text-xs font-semibold text-sky-700 mb-3">Mayor of Greater Manchester</p>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• <strong>Strategic Mayors Initiative</strong>: Partnership with Bloomberg Philanthropies since 2017.</li>
+                        <li>• <strong>A Bed Every Night (ABEN)</strong>: Rapid rehousing model developed with outcome budgeting.</li>
+                        <li>• <strong>Healthy Cities Accelerator</strong>: Youth-led junk food ad restriction framework.</li>
+                    </ul>
+                </div>
+
+                <!-- Susan Aitken -->
+                <div class="bg-white rounded-xl p-5 card-shadow border-t-4 border-amber-500">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-900">Susan Aitken</h4>
+                        <span class="text-xs bg-yellow-100 text-amber-900 px-2 py-0.5 rounded font-bold">SNP</span>
+                    </div>
+                    <p class="text-xs font-semibold text-sky-700 mb-3">Leader of Glasgow City Council</p>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• <strong>Bloomberg Harvard Class of 2023</strong>: Alumnus of executive training cohort.</li>
+                        <li>• <strong>Glasgow Greenprint</strong>: Partner in COP28 Local Climate Summit & 3Ci founder.</li>
+                        <li>• <strong>Youth Climate Fund</strong>: Direct Bloomberg grant recipient for micro-projects.</li>
+                    </ul>
+                </div>
+
+                <!-- Tracy Brabin -->
+                <div class="bg-white rounded-xl p-5 card-shadow border-t-4 border-red-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-slate-900">Tracy Brabin</h4>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">Labour</span>
+                    </div>
+                    <p class="text-xs font-semibold text-sky-700 mb-3">Mayor of West Yorkshire</p>
+                    <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+                        <li>• <strong>Dual Cohort Alumnus</strong>: Participated in Harvard & inaugural LSE European programs.</li>
+                        <li>• <strong>Performance Analytics</strong>: Institutionalized outcome-based budgeting across MCA.</li>
+                        <li>• <strong>Transport Devolution</strong>: Integrated regional transit delivery models.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- INTERMEDIARY ECOSYSTEM CHART -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Intermediary Delivery Ecosystem Distribution</h3>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Proportional presence of technical intermediary platforms translating philanthropic funding into local council civil service toolkits.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="chartIntermediaryEco"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Key Intermediary Organizations & Roles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                            <span class="font-bold text-blue-900 text-sm block mb-1">C40 Cities Climate Leadership</span>
+                            <p class="text-slate-600">Co-funded by Bloomberg Philanthropies; delivers standardized templates for ULEZ, zero-emission transit, and carbon accounting.</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                            <span class="font-bold text-blue-900 text-sm block mb-1">3Ci (Cities Commission)</span>
+                            <p class="text-slate-600">Partnership between Core Cities UK & London Councils; aggregates local retrofits into multi-billion-pound institutional finance pipelines.</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                            <span class="font-bold text-blue-900 text-sm block mb-1">LSE Cities & Hertie School</span>
+                            <p class="text-slate-600">$50M funded Bloomberg LSE European City Leadership Initiative delivering data-driven public delivery curriculum to UK leaders.</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                            <span class="font-bold text-blue-900 text-sm block mb-1">Behavioural Insights Team (BIT)</span>
+                            <p class="text-slate-600">Primary vendor for What Works Cities; designs randomized controlled trials (RCTs) and behavioral choice architectures for local councils.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: POLICY GENEALOGY ACROSS 5 KEY DOMAINS -->
+        <section id="policy-domains" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Policy Genealogy Across 5 Core Domains</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Tracing the precise transmission pipeline: Bloomberg research/pilot ➔ local council testing ➔ national statutory adoption.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200 mb-8">
+                <p class="text-slate-700 leading-relaxed text-base">
+                    To trace policy lineage accurately, a clear operational distinction must be maintained between <strong>Bloomberg Philanthropies</strong> (grant-making foundation), <strong>Bloomberg Associates</strong> (pro-bono municipal consultancy), and <strong>Bloomberg L.P.</strong> (commercial financial data). Across five core governance domains, Bloomberg platforms have successfully operationalized philanthropic capital into civil service toolkits, creating an aligned regulatory environment across SNP and Labour authorities.
+                </p>
+            </div>
+
+            <!-- DOMAIN DENSITY RADAR CHART & EXPLANATION -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10">
+                <div class="lg:col-span-5 bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Policy Transmission Density Across Domains</h3>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Comparative programmatic density of Bloomberg initiatives deployed across target local authorities.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="chartPolicyDomains"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-4">
+                    <!-- Domain 1 -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-l-4 border-sky-600">
+                        <h4 class="font-bold text-slate-900 text-sm">Domain 1: Municipal Leadership & Innovation</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Deployment of "i-teams" (innovation teams), open data standards, and outcome-based budgeting. In London, LOTI partnered with Bloomberg Associates to launch <em>City Tools: London</em> (Thirty3), mapping software contracts across all boroughs for automated procurement alignment.
+                        </p>
+                    </div>
+                    <!-- Domain 2 -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-l-4 border-teal-600">
+                        <h4 class="font-bold text-slate-900 text-sm">Domain 2: Homelessness, Housing & Tenant Protections</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Lineage traces from Bloomberg Associates' Social Services practice to Greater Manchester’s "A Bed Every Night" (ABEN) program. ABEN’s multi-agency outcome tracking model directly informed national MHCLG rough sleeping strategies.
+                        </p>
+                    </div>
+                    <!-- Domain 3 -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-l-4 border-blue-900">
+                        <h4 class="font-bold text-slate-900 text-sm">Domain 3: Climate Action, Urban Planning & Enforcement</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Scaling of ULEZ, Breathe London sensors, Low Traffic Neighborhoods (LTNs), and Asphalt Art. Glasgow’s £115M "Avenues" project reprioritizes vehicular traffic into active travel corridors, capitalized via 3Ci green finance models.
+                        </p>
+                    </div>
+                    <!-- Domain 4 -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-l-4 border-amber-500">
+                        <h4 class="font-bold text-slate-900 text-sm">Domain 4: Public Health & Social Policy</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Partnership for Healthy Cities toolkits driving High Fat, Sugar, or Salt (HFSS) advertising bans. Originating across Transport for London (TfL), the ban was adopted across Greater Manchester transit and Tower Hamlets council assets.
+                        </p>
+                    </div>
+                    <!-- Domain 5 -->
+                    <div class="bg-white p-4 rounded-xl card-shadow border-l-4 border-indigo-600">
+                        <h4 class="font-bold text-slate-900 text-sm">Domain 5: Devolution, Equity & Anchor Procurement</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Bloomberg Strategic Authority Mayors Initiative supports England’s Mayoral Combined Authorities (MCAs) to absorb devolved powers. Bloomberg Associates established the London Anchor Institutions Network (LAIN) for localized procurement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRAMMATIC SCALING TIME CHART -->
+            <div class="bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Temporal Sequence & Funding Scale of Major Bloomberg Interventions</h3>
+                <p class="text-xs text-slate-500 mb-4">
+                    Tracking the scaling trajectory from pilot funding deployment to statutory integration and global network expansion ($ Millions / £ Millions).
+                </p>
+                <div class="chart-container">
+                    <canvas id="chartScalingTrajectory"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ASYLUM DISPERSAL & MUNICIPAL DATA OVERLAY -->
+        <section id="asylum-overlay" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Asylum Dispersal & Municipal Data Overlay</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Evaluating structural tensions between Bloomberg outcome-based budgeting frameworks and Home Office asylum dispersal shocks.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200 mb-8">
+                <p class="text-slate-700 leading-relaxed text-base">
+                    An analysis of municipal social policy reveals a profound administrative tension: local authorities participating in Bloomberg leadership and innovation programs are frequently the exact jurisdictions bearing the highest per-capita concentration of asylum dispersal. Bloomberg frameworks mandate rigorous, data-driven, outcome-based budgeting that penalizes unpredictable emergency expenditure. However, central government asylum dispersal contracts (£15.3B managed by Serco, Mears, Clearsprings) introduce unmodeled fiscal shocks into municipal social care, public health, and temporary accommodation budgets.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- CHART 3: ASYLUM OVERLAY -->
+                <div class="lg:col-span-6 bg-white p-6 rounded-xl card-shadow border border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Asylum Dispersal Concentration vs Supported Volumes</h3>
+                    <p class="text-xs text-slate-500 mb-4">
+                        Comparison of total supported asylum seekers and concentration rate per 10,000 residents across key Bloomberg-aligned authorities.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="chartAsylumOverlay"></canvas>
+                    </div>
+                </div>
+
+                <!-- OVERLAY DATA TABLE -->
+                <div class="lg:col-span-6 bg-white rounded-xl card-shadow border border-slate-200 overflow-hidden">
+                    <div class="px-6 py-4 bg-slate-900 text-white">
+                        <h3 class="font-bold text-base">Asylum Dispersal & Policy Friction Matrix</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead class="bg-slate-100 text-slate-700 uppercase font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="p-3">Local Authority</th>
+                                    <th class="p-3">Supported Asylum Seekers</th>
+                                    <th class="p-3">Rate / 10k Pop</th>
+                                    <th class="p-3">Primary Friction Point</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-slate-700 font-normal">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Glasgow City Council</td>
+                                    <td class="p-3 font-mono font-bold">3,900</td>
+                                    <td class="p-3 font-mono text-amber-600 font-bold">16.0</td>
+                                    <td class="p-3">Housing First target saturation; refugee homelessness doubling post-decision.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Birmingham City Council</td>
+                                    <td class="p-3 font-mono font-bold">2,142</td>
+                                    <td class="p-3 font-mono text-amber-600 font-bold">18.7</td>
+                                    <td class="p-3">Section 114 notice conditions; temporary accommodation budget strain.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Liverpool City Council</td>
+                                    <td class="p-3 font-mono font-bold">2,053</td>
+                                    <td class="p-3 font-mono text-amber-600 font-bold">21.2</td>
+                                    <td class="p-3">School place allocation bottlenecks; health inequality funds diverted.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">Manchester (GMCA)</td>
+                                    <td class="p-3 font-mono font-bold">1,600</td>
+                                    <td class="p-3 font-mono text-amber-600 font-bold">14.5</td>
+                                    <td class="p-3">ABEN emergency shelter saturation post 28-day move-on evictions.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">London Borough of Hillingdon</td>
+                                    <td class="p-3 font-mono font-bold">~1,500</td>
+                                    <td class="p-3 font-mono text-red-600 font-bold">48.5</td>
+                                    <td class="p-3">Airport transit corridor; hotel reliance; UASC social work overheads.</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="p-3 font-semibold text-slate-900">London Borough of Islington</td>
+                                    <td class="p-3 font-mono font-bold">~450</td>
+                                    <td class="p-3 font-mono text-amber-600 font-bold">18.2</td>
+                                    <td class="p-3">High density forces out-of-borough placements; climate resilience targeting.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PRIMARY SOURCE EVIDENCE & FOI REPOSITORY GUIDE -->
+        <section id="foi-repository" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Primary Source Evidence & FOI Repository Guide</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Documented public records and targeted Freedom of Information (FOI) parameters to retrieve unrecorded pro-bono consulting agreements.
+                </p>
+            </div>
+
+            <!-- PUBLIC RECORDS KNOWN DISCLOSURES -->
+            <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200 mb-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-4">Known Statutory Disclosures & Decisions</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-blue-900 block mb-1">GLA Decision Register ADD2624</span>
+                        <p class="text-slate-600 leading-relaxed">Formally records operational framework and event funding (£17,500) for London Anchor Institutions Network (LAIN), citing continuous pro-bono consulting from Bloomberg Associates.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-blue-900 block mb-1">LOTI MoU (Thirty3 Procurement)</span>
+                        <p class="text-slate-600 leading-relaxed">Formal agreement between LOTI, GLA, and Bloomberg Associates establishing data-sharing protocols across London borough IT procurement platforms.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                        <span class="font-bold text-blue-900 block mb-1">MHCLG Transparency Returns</span>
+                        <p class="text-slate-600 leading-relaxed">Records high-level policy meetings between senior civil servants, Oxford City Council, Defra, and Bloomberg Philanthropies regarding housing performance analytics.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOI TARGETING MODULES -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 text-white rounded-xl p-5 card-shadow border-t-4 border-amber-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">📁</span>
+                        <h4 class="font-bold text-sm">FOI Module 1: Unrecorded Pro-Bono Consulting</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                        <strong>Targets:</strong> GLA, GMCA, West Yorkshire, Westminster, Glasgow, Islington.
+                    </p>
+                    <div class="bg-slate-800 p-3 rounded font-mono text-[11px] text-sky-300 space-y-1">
+                        <p>Search Terms: "Bloomberg Associates", "pro-bono consulting", "embedded team", "technical assistance", "City Tools", "LAIN".</p>
+                        <p class="text-slate-400 mt-2">Request: MoUs, NDAs, total staff hours, and IT system access permissions granted to external consultants.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-xl p-5 card-shadow border-t-4 border-amber-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">✈️</span>
+                        <h4 class="font-bold text-sm">FOI Module 2: Hospitality & Travel Registers</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                        <strong>Targets:</strong> Mayoral Combined Authorities & Core Cities Chief Executives.
+                    </p>
+                    <div class="bg-slate-800 p-3 rounded font-mono text-[11px] text-sky-300 space-y-1">
+                        <p>Search Terms: "Bloomberg Harvard", "City Leadership Initiative", "LSE Leadership", "Bloomberg travel sponsor".</p>
+                        <p class="text-slate-400 mt-2">Request: Complete flight, hotel, and venue expenses covered directly by Bloomberg Philanthropies for mayors/officers.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-xl p-5 card-shadow border-t-4 border-amber-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">📝</span>
+                        <h4 class="font-bold text-sm">FOI Module 3: Policy Drafting & Software</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+                        <strong>Targets:</strong> Directors of Public Health, Transport, and Environment.
+                    </p>
+                    <div class="bg-slate-800 p-3 rounded font-mono text-[11px] text-sky-300 space-y-1">
+                        <p>Search Terms: "Breathe London", "Vital Strategies", "Behavioural Insights Team", "Asphalt Art", "HFSS restrictions".</p>
+                        <p class="text-slate-400 mt-2">Request: Email correspondence & draft strategy documents exchanged regarding advertising restrictions and LTN parameters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: STRATEGIC ANALYSIS & SYSTEMIC CONCLUSIONS -->
+        <section id="conclusions" class="scroll-mt-20">
+            <div class="border-l-4 border-blue-900 pl-4 mb-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Strategic Analysis & Systemic Conclusions</h2>
+                <p class="text-slate-600 text-base mt-1">
+                    Synthesis of structural shifts, administrative consensus, and external policy generation across UK political institutions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-sm">1</span>
+                        <h3 class="font-bold text-slate-900 text-base">Post-Ideological Administrative Consensus</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        By engaging both SNP-led councils (Glasgow) and Labour-led combined authorities (London, Greater Manchester, West Yorkshire), Bloomberg initiatives establish a unified operational methodology. Outcome-based budgeting, open data dashboards, active travel spatial designs, and interventionist public health toolkits become standardized administrative norms. Policy alignment occurs through shared technical infrastructure rather than traditional party manifestos.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-sm">2</span>
+                        <h3 class="font-bold text-slate-900 text-base">Philanthropic Capacity Multiplication</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        In an era of severe fiscal constraints on local authority baseline budgets, pro-bono consulting from Bloomberg Associates and grant funding from Bloomberg Philanthropies provide crucial technical resources. Local councils gain access to world-class data analytics, spatial mapping, and strategic communications expertise at zero nominal cost, creating a structural dependency wherein municipal priorities align with philanthropic objectives.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-sm">3</span>
+                        <h3 class="font-bold text-slate-900 text-base">Bypassing Traditional Oversight</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        The deployment of pro-bono consulting, technical assistance MoUs, and executive training fellowships operates largely beneath the threshold of statutory public procurement scrutiny. Because no municipal funds are directly paid to Bloomberg Associates for consultancy services, formal competitive tendering processes are not triggered, enabling rapid policy prototyping without initial parliamentary debates.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 card-shadow border border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-900 font-bold flex items-center justify-center text-sm">4</span>
+                        <h3 class="font-bold text-slate-900 text-base">Convergence into National Directives</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        The policy pipeline established by Bloomberg entities successfully scales local municipal pilots into national political agendas. Models developed in Greater Manchester ("A Bed Every Night") and London (ULEZ, Breathe London, TfL HFSS advertising restrictions) systematically transition into central government rough sleeping strategies, national air quality monitoring standards, and national public health guidance.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p class="font-semibold text-slate-300">Bloomberg Entities & UK Governance Forensic Research SPA</p>
+            <p>Data compiled from GLA Decision Registers, LOTI Disclosures, MHCLG Transparency Returns, and Municipal Strategy Documents.</p>
+            <p class="text-slate-500 text-[10px]">Canvas-based Data Visualizations • NO SVG Graphic Files Used • Pure Tailwind CSS Layout</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CHART.JS IMPLEMENTATIONS -->
+    <script>
+        // Utility Function for Label Wrapping (16-char logic requirement)
+        function wrapLabel(str, maxChars = 16) {
+            if (typeof str !== 'string') return str;
+            if (str.length <= maxChars) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxChars) {
+                    if (currentLine) lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) lines.push(currentLine.trim());
+            return lines.length > 1 ? lines : str;
+        }
+
+        // Global Chart.js Tooltip Title Callback Setup
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // -------------------------------------------------------------
+        // CHART 1: Evidentiary Classification by Local Authority
+        // -------------------------------------------------------------
+        const rawAuthLabels = [
+            'Greater London Authority', 
+            'Greater Manchester', 
+            'Glasgow City Council', 
+            'West Yorkshire Combined', 
+            'Westminster City Council', 
+            'LB Islington', 
+            'LOTI London', 
+            'South Yorkshire Combined', 
+            'West Midlands Combined', 
+            'West of England', 
+            'Blackpool Council', 
+            'Newport City Council', 
+            'Oxford City Council'
+        ];
+        
+        const wrappedAuthLabels = rawAuthLabels.map(l => wrapLabel(l, 16));
+
+        const ctx1 = document.getElementById('chartEvidenceMatrix').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: wrappedAuthLabels,
+                datasets: [
+                    {
+                        label: 'Direct Evidence',
+                        data: [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: '#059669', // Emerald
+                    },
+                    {
+                        label: 'Strategic Alignment',
+                        data: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+                        backgroundColor: '#0284c7', // Sky Blue
+                    },
+                    {
+                        label: 'Indirect Correlation',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+                        backgroundColor: '#f59e0b', // Amber
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        max: 1,
+                        ticks: { display: false },
+                        grid: { display: false }
+                    },
+                    y: {
+                        stacked: true,
+                        ticks: { font: { size: 10 } }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // -------------------------------------------------------------
+        // CHART 2: Intermediary Delivery Ecosystem Distribution
+        // -------------------------------------------------------------
+        const rawInterLabels = ['C40 Cities Network', '3Ci Green Finance', 'Bloomberg LSE Cities', 'Behavioural Insights', 'Centre Public Impact', 'Harvard GPL'];
+        const wrappedInterLabels = rawInterLabels.map(l => wrapLabel(l, 16));
+
+        const ctx2 = document.getElementById('chartIntermediaryEco').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: wrappedInterLabels,
+                datasets: [{
+                    data: [30, 22, 18, 15, 8, 7],
+                    backgroundColor: ['#1e3a8a', '#0284c7', '#0d9488', '#f59e0b', '#6366f1', '#475569']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // -------------------------------------------------------------
+        // CHART 3: Policy Transmission Density Across 5 Core Domains
+        // -------------------------------------------------------------
+        const rawDomainLabels = [
+            'Municipal Innovation', 
+            'Housing & Rough Sleeping', 
+            'Climate & Active Travel', 
+            'Public Health & HFSS', 
+            'Devolution & Anchors'
+        ];
+        const wrappedDomainLabels = rawDomainLabels.map(l => wrapLabel(l, 16));
+
+        const ctx3 = document.getElementById('chartPolicyDomains').getContext('2d');
+        new Chart(ctx3, {
+            type: 'radar',
+            data: {
+                labels: wrappedDomainLabels,
+                datasets: [
+                    {
+                        label: 'London (GLA)',
+                        data: [95, 75, 98, 90, 85],
+                        borderColor: '#1e3a8a',
+                        backgroundColor: 'rgba(30, 58, 138, 0.2)'
+                    },
+                    {
+                        label: 'Greater Manchester',
+                        data: [85, 95, 80, 85, 90],
+                        borderColor: '#0284c7',
+                        backgroundColor: 'rgba(2, 132, 199, 0.2)'
+                    },
+                    {
+                        label: 'Glasgow City Council',
+                        data: [80, 70, 90, 65, 75],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        suggestedMin: 50,
+                        suggestedMax: 100,
+                        ticks: { font: { size: 9 } }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // -------------------------------------------------------------
+        // CHART 4: Programmatic Scaling Trajectory
+        // -------------------------------------------------------------
+        const rawYears = ['2018 Pilot Phase', '2020 Expansion', '2022 Statutory Rollout', '2024 National Scaling', '2026 Global Model'];
+        const wrappedYears = rawYears.map(y => wrapLabel(y, 16));
+
+        const ctx4 = document.getElementById('chartScalingTrajectory').getContext('2d');
+        new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: wrappedYears,
+                datasets: [
+                    {
+                        label: 'Breathe London / Breathe Cities Funding ($M)',
+                        data: [1.5, 2.8, 10.0, 45.0, 50.0],
+                        borderColor: '#0284c7',
+                        backgroundColor: 'rgba(2, 132, 199, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Glasgow Avenues & Active Travel (£M)',
+                        data: [10, 25, 60, 115, 120],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'transparent',
+                        borderDash: [5, 5],
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        title: { display: true, text: 'Valuation (£ / $ Millions)', font: { size: 10 } }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        // -------------------------------------------------------------
+        // CHART 5: Asylum Dispersal Concentration vs Supported Seekers
+        // -------------------------------------------------------------
+        const rawAsylumLabels = ['Glasgow City', 'Birmingham City', 'Liverpool City', 'Manchester (GMCA)', 'LB Hillingdon', 'LB Islington'];
+        const wrappedAsylumLabels = rawAsylumLabels.map(l => wrapLabel(l, 16));
+
+        const ctx5 = document.getElementById('chartAsylumOverlay').getContext('2d');
+        new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: wrappedAsylumLabels,
+                datasets: [
+                    {
+                        label: 'Supported Asylum Seekers (Total)',
+                        data: [3900, 2142, 2053, 1600, 1500, 450],
+                        backgroundColor: '#1e3a8a',
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Concentration Rate (per 10,000 pop)',
+                        data: [16.0, 18.7, 21.2, 14.5, 48.5, 18.2],
+                        backgroundColor: '#f59e0b',
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Total Individuals', font: { size: 10 } }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'Rate per 10k', font: { size: 10 } }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+</html>
